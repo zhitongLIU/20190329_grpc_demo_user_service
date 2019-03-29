@@ -1,0 +1,3 @@
+[submodule "20190329_user_service_ruby_lib"]
+	path = 20190329_user_service_ruby_lib
+	url = https://github.com/zhitongLIU/20190329_user_service_ruby_lib.git
