@@ -28,12 +28,21 @@ class User
   def self.find(id)
     USER_DB.find { |record| record[:id] == id }
   end
+
+  def self.all
+    USER_DB
+  end
 end
 
 class UserServer < Demo::Users::Service
   def find(req, _call)
+    sleep 30;
     user = User.find(req.id)
     Demo::User.new(id: user[:id], email: user[:email], name: user[:name])
+  end
+
+  def all(req, _call)
+    Demo::AllUserReply.new(users: User.all)
   end
 end
 
